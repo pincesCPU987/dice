@@ -5,9 +5,9 @@
   <body>
     <p>
       Lower limit: <input type="number" id="low">
-      <br/>
+      <br />
       Higher limit: <input type="number" id="high">
-      <br/>
+      <br />
       <input type="button" value="Randomize!" id="calc">
     </p>
     <p id="output">
@@ -17,8 +17,28 @@
       var low = document.querySelector('#low');
       var high = document.querySelector('#high');
       var output = document.querySelector('#output');
-      var calc = document.querySelector('#calc')';
-      calc.addEventListener('click',function(){if(low.value > high.value){var c = low.value;low.value = high.value;hig.value = c}output.innerHTML = Math.floor((Math.random() * (high.value + low.value)) + low.value)});
+      var calc = document.querySelector('#calc');
+      calc.addEventListener(
+        'click',
+        function() {
+        	var a = Number(low.value)
+          var b = Number(high.value)
+          if (a > b) {
+            var c = a;
+            a = b;
+            b = c;
+            low.value = a;
+            high.value = b;
+          }
+          output.innerHTML = Math.floor(
+            (
+              (
+              	Math.random() * ((b - a) + 1)
+              ) + a
+            )
+          );
+        }
+      );
     </script>
   </body>
 </html>
