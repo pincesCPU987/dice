@@ -18,4 +18,7 @@
       var high = document.querySelector('#high');
       var output = document.querySelector('#output');
       var calc = document.querySelector('#calc')';
-      calc.addEventListener('click',function(){if(low.value > high.value){})})
+      calc.addEventListener('click',function(){if(low.value > high.value){var c = low.value;low.value = high.value;hig.value = c}output.innerHTML = Math.floor((Math.random() * (high.value + low.value)) + low.value)});
+    </script>
+  </body>
+</html>
